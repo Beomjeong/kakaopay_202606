@@ -652,6 +652,28 @@ img {
   transform: translateY(0);
 }
 
+/* 쫀득한 스프링 등장 (sec03 step) */
+@keyframes anim-spring-up {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.96); }
+  55%  { opacity: 1; transform: translateY(-10px) scale(1.02); }
+  75%  { transform: translateY(4px) scale(0.99); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes anim-fade-up {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.anim-spring {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+}
+
+.anim-spring.anim-visible {
+  animation: anim-spring-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 /* ============================================
    Responsive — 태블릿 (≤ 1024px)
 ============================================ */
@@ -759,6 +781,11 @@ img {
 @media (max-width: 768px) {
   :root {
     --cont-pad: 20px;
+  }
+
+  /* 모바일: 스프링 → 부드러운 페이드업으로 대체 */
+  .anim-spring.anim-visible {
+    animation: anim-fade-up 0.5s ease forwards;
   }
 
   /* FAR 코인 숨기기 (모바일에서 복잡해 보이지 않게) */

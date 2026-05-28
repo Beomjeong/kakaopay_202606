@@ -79,11 +79,48 @@
   }
 
   /* ───────────────────────────────
+     3. SEC03 Entrance Animations
+  ─────────────────────────────── */
+  function initSec03Animations() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    var isMobile = window.innerWidth <= 768;
+    var title = document.querySelector('#sec03 .sec03-title');
+    var steps = document.querySelectorAll('#sec03 .step');
+
+    // 타이틀: 부드러운 페이드업
+    if (title) title.classList.add('anim-item');
+
+    // 스텝: 쫀득한 스프링 (PC) / 부드러운 페이드 (MO — CSS media query로 처리)
+    steps.forEach(function (step, i) {
+      step.classList.add('anim-spring');
+      // PC: 타이틀 등장 후 순서대로 딜레이
+      if (!isMobile) {
+        step.style.animationDelay = (0.18 + i * 0.15) + 's';
+      }
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('anim-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (title) observer.observe(title);
+    steps.forEach(function (step) { observer.observe(step); });
+  }
+
+  /* ───────────────────────────────
      초기화
   ─────────────────────────────── */
   function init() {
     initParallax();
     initEntranceAnimations();
+    initSec03Animations();
   }
 
   if (document.readyState === 'loading') {
