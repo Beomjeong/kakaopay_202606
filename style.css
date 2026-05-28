@@ -298,7 +298,7 @@ img {
 }
 
 .sec03-inner {
-  max-width: 1320px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--cont-pad);
 }
@@ -447,7 +447,45 @@ img {
    SEC04 — 유의사항
 ============================================ */
 #sec04 {
-  /* TODO */
+  padding: 60px 0 100px;
+}
+
+.sec04-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--cont-pad);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.sec04-title {
+  height: auto;
+  width: 30%;
+  min-width: 212px;
+}
+
+/* 유의사항 목록 — hanging indent */
+.notice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 10px 25px;
+}
+
+.notice-list li {
+  display: flex;
+  gap: 0.4em;
+  font-size: var(--fs-desc);
+  font-weight: var(--fw-desc);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--clr-black);
+}
+
+.notice-list li::before {
+  content: "−";
+  flex-shrink: 0;
 }
 
 
