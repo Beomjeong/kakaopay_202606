@@ -305,8 +305,8 @@ img {
 
 /* 반투명 노랑 유리 컨테이너 */
 .sec03-box {
+  /* 1. 배경색, 그림자, 패딩 등 기본 스타일 (배경 노란색 투명도 완벽 유지) */
   background: linear-gradient(to bottom, rgba(255, 255, 39, 0.52), rgba(255, 243, 2, 0.52));
-  border: 1px solid #ffffff;
   border-radius: 30px;
   box-shadow: 0 14px 26px 0 rgba(255, 174, 0, 0.42);
   padding: 48px 40px;
@@ -314,11 +314,34 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  
+  /* [중요] 가상 요소 테두리의 기준점이 되기 위해 추가 */
+  position: relative; 
+}
+
+/* 2. [핵심] 테두리만 독립적으로 그려주는 가상 요소 */
+.sec03-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 30px; /* 부모와 똑같은 곡률 */
+  
+  /* 1px 테두리 영역만 남기고 안쪽은 비워버리는 마술 */
+  padding: 1px; 
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          
+  pointer-events: none; /* 테두리가 안쪽 콘텐츠 클릭을 방해하지 않도록 설정 */
 }
 
 .sec03-title {
-  height: 50px;
-  width: auto;
+  /* height: 50px;
+  width: auto; */
+  width: 20%;
+  height: auto;
+  min-width: 118px;
 }
 
 /* STEPS: PC 가로 3열 */
