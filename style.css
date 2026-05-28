@@ -294,7 +294,127 @@ img {
    SEC03 — 참여방법
 ============================================ */
 #sec03 {
-  /* TODO */
+  padding: 80px 0 100px;
+}
+
+.sec03-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 var(--cont-pad);
+}
+
+/* 반투명 노랑 유리 컨테이너 */
+.sec03-box {
+  background: linear-gradient(to bottom, rgba(255, 255, 39, 0.52), rgba(255, 243, 2, 0.52));
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 14px 26px 0 rgba(255, 174, 0, 0.42);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.sec03-title {
+  height: 50px;
+  width: auto;
+}
+
+/* STEPS: PC 가로 3열 */
+.steps {
+  display: flex;
+  gap: 43px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 개별 STEP (badge + card) */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+  max-width: 384px;
+}
+
+/* STEP 배지 */
+.step-badge {
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid #6d6d6d;
+  border-radius: 50px;
+  padding: 16px 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-badge img {
+  height: 32px;
+  width: auto;
+}
+
+/* STEP 카드 */
+.step-card {
+  background-color: rgba(255, 255, 255, 0.61);
+  border-radius: 46px;
+  overflow: hidden;
+  width: 100%;
+  min-height: 484px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 27px 105px;
+  position: relative;
+}
+
+/* 카드 내 설명 텍스트 */
+.step-desc {
+  font-family: 'neutronic-hangeul', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: var(--clr-black);
+  flex-shrink: 0;
+}
+
+.step-desc strong {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 카드 내 이미지 — margin-top:auto로 카드 하단에 자동 배치 */
+.step-img {
+  max-width: 100%;
+  height: auto;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* STEP 1 전용: 오렌지 CTA 버튼 */
+.step-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 83px;
+  background-color: rgba(255, 136, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.step-btn img {
+  height: 28px;
+  width: auto;
 }
 
 /* ============================================
@@ -369,6 +489,45 @@ img {
   .event-highlight {
     height: 54px;
     border-radius: 14px;
+  }
+
+  /* SEC03 태블릿 */
+  .step-desc {
+    font-size: 20px;
+  }
+
+  #sec03 {
+    padding: 60px 0 80px;
+  }
+
+  .sec03-box {
+    padding: 40px 28px;
+    gap: 40px;
+  }
+
+  .steps {
+    gap: 24px;
+  }
+
+  .step-badge {
+    padding: 12px 28px;
+  }
+
+  .step-badge img {
+    height: 26px;
+  }
+
+  .step-card {
+    min-height: 420px;
+    padding: 28px 20px 88px;
+  }
+
+  .step-btn {
+    height: 70px;
+  }
+
+  .step-btn img {
+    height: 22px;
   }
 }
 
@@ -482,5 +641,53 @@ img {
   /* KV: 모바일에서 좌우 여백 제거 → 풀블리드 */
   .sec01-kv {
     padding: 0;
+  }
+
+  /* SEC03 모바일 */
+  .step-desc {
+    font-size: 20px;
+  }
+
+  #sec03 {
+    padding: 50px 0 60px;
+  }
+
+  .sec03-box {
+    padding: 32px 16px;
+    gap: 24px;
+    border-radius: 20px;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .step {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .step-badge {
+    padding: 10px 20px;
+  }
+
+  .step-badge img {
+    height: 20px;
+  }
+
+  .step-card {
+    max-width: 320px;
+    min-height: 484px;
+    padding: 35px 27px 105px;
+  }
+
+  .step-btn {
+    height: 83px;
+  }
+
+  .step-btn img {
+    height: 22px;
   }
 }

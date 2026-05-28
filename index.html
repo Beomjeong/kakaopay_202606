@@ -38,6 +38,18 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="피카PC방 2026년 6월 카카오페이 프로모션">
 
+  <!-- Adobe Fonts (Typekit) -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'jjw7yow',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,7 +183,67 @@
           </ul>
         </div>
       </section>
-      <section id="sec03" class="section"><!-- 참여방법 --></section>
+      <!-- ============================================
+           SEC03 — 참여방법
+      ============================================ -->
+      <section id="sec03" class="section">
+        <div class="sec03-inner">
+          <div class="sec03-box">
+
+            <img src="assets/sec03_title.svg" class="sec03-title" alt="참여방법">
+
+            <div class="steps">
+
+              <!-- STEP 1 -->
+              <div class="step">
+                <div class="step-badge">
+                  <img src="assets/txt_step1.svg" alt="STEP 1">
+                </div>
+                <div class="step-card step-card--btn">
+                  <p class="step-desc">
+                    PC방 찾기를 통해<br>
+                    <strong>카카오페이 가맹 PC방 방문</strong><br>
+                    (편의시설 카카오페이 선택)
+                  </p>
+                  <img src="assets/stepimg_1.png" class="step-img" alt="" loading="lazy">
+                  <a href="https://www.picaplay.com/pcbang/main.do#" class="step-btn" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/bt_txt_findpcbang.svg" alt="카카오페이 가맹 PC방 찾기">
+                  </a>
+                </div>
+              </div>
+
+              <!-- STEP 2 -->
+              <div class="step">
+                <div class="step-badge">
+                  <img src="assets/txt_step2.svg" alt="STEP 2">
+                </div>
+                <div class="step-card">
+                  <p class="step-desc">
+                    요금제나 먹거리 결제 시<br>
+                    결제수단 카카오페이 선택
+                  </p>
+                  <img src="assets/stepimg_2.png" class="step-img" alt="" loading="lazy">
+                </div>
+              </div>
+
+              <!-- STEP 3 -->
+              <div class="step">
+                <div class="step-badge">
+                  <img src="assets/txt_step3.svg" alt="STEP 3">
+                </div>
+                <div class="step-card">
+                  <p class="step-desc">
+                    QR 스캔하고, 카카오페이머니로<br>
+                    <strong>결제하면 참여 완료!</strong>
+                  </p>
+                  <img src="assets/stepimg_3.png" class="step-img" alt="" loading="lazy">
+                </div>
+              </div>
+
+            </div><!-- /.steps -->
+          </div><!-- /.sec03-box -->
+        </div><!-- /.sec03-inner -->
+      </section>
       <section id="sec04" class="section"><!-- 유의사항 --></section>
     </main>
 
