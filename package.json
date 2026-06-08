@@ -4,13 +4,17 @@
   "description": "",
   "main": "script.js",
   "type": "commonjs",
-  "scripts": {
-    "start": "node script.js",
-    "dev": "serve ."
-  },
+"scripts": {
+  "start": "node script.js",
+  "dev": "serve .",
+  "deploy": "gh-pages -d ."
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
     "serve": "^14.2.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
