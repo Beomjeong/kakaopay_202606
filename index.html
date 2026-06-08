@@ -108,6 +108,11 @@
     html {
       scroll-behavior: smooth;
       overscroll-behavior-y: none;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    html::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, iOS */
     }
 
     body {
